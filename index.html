@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red Button</title> 
+    <meta charset="UTF-8">
+    <link rel="icon" href="red.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="center">
+      <div class="select-button" id="playButton"></div>
+    </div>
+    <div id="videoContainer">
+      <video id="myVideo">
+        <source src="rickroll.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <script>
+      let clickCount = 0;
+
+      document.getElementById('playButton').addEventListener('click', function() {
+          clickCount++;
+          if (clickCount >= 6) {
+              const videoContainer = document.getElementById('videoContainer');
+              const video = document.getElementById('myVideo');
+              
+              videoContainer.style.display = 'block';
+
+              video.play();
+          }
+      });
+  </script>
+  </body>
+</html>
